@@ -3,21 +3,30 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Aula 03</title>
+    <title>Aula 04</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <img src="https://i.postimg.cc/GpCxYmvc/title.png" alt="Logo" class="logo">
 
-    <div class="container">
-        <div class="content">
-            <h2>Você pode se arrepender de ser forte, mas não pode se arrepender de ser fraco</h2>
-            <p> Satoru Gojo ou Suguru Geto?</p>
+    <div class="titulo">
+        <h2>Força ou Queda</h2>
+      </div>
+    
+      <main class="conteudo-jogo">
+        <div id="container">
+          <h2>Escolha 3 jogadores para seu time:</h2>
+          <div style="display: grid; place-items: center; height: 200px;">
             <button id="bt-convertor">Bora batalhar!</button>
-        </div>
-    </div>
-    <script src="script_03.js"></script>
+          </div>
+    
+          <p id="informacoesJogador" class="resultado"></p>
+          <p id="informacoesComputador" class="resultado"></p>
+          <button id="resultadoBtn" style="display:none;">Ver Resultado</button>
+          <h1 id="resultadoFinal" class="resultado"></h1>
+      </main>
+    <script src="script_04.js"></script>
 </body>
 
 </html>

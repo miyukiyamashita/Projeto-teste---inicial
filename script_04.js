@@ -1,28 +1,54 @@
 document.getElementById("bt-convertor").addEventListener("click", function () {
-    let idade = prompt("Quantos anos voce tem? ");
-    if (idade < 18) {
-        alert("Voce nao pode jogar!");
-        return;
+    // criar uma lista com 3 personagens
+    personagem = [" ", " ", " "];
+
+    vilaoComp = [" ", " ", " "];
+
+    forcaPers = 0;
+    forcaComp = 0;
+
+    alert("O array personagem contém: " + personagem);
+    for (let i = 0; i < 3; i++) {
+        escolhaPerson = prompt("Digite o nome do seu personagem: " + (i + 1));
+        personagem[i] = escolhaPerson;
+        // calcular a força de cada personagem e depois somar para saber a força do time
+        forcaPers = forcaPers + Math.floor(Math.random() * 10) + 1;
+        // forcaPerson += Math.floor(Math.random() * 10) + 1 / outra maneira
     }
+    console.log("Agora, o array personagem contém: " + personagem);
+    console.log("Vilões iniciais; " + vilaoComp);
 
-    ganhou = 0 // se for 1 perdeu, se for 0 ganhou
+    for (let i = 0; i < 3; i++) {
+        indiceAlea = Math.floor(Math.random() * 10);
+        vilaoUsuario = [
+            "Suguru Geto ",
+            "Sukuna ",
+            "Vetto ",
+            "Megicula ",
+            "Thanos ",
+            "Carminha ",
+            "Bibi Perigosa",
+            "Dexter ",
+            "Covinhas",
+            "Aizen"
+        ];
+        vilaoComp[i] = vilaoUsuario[indiceAlea];
+        // calcular a força de cada personagem do time do computador
+        forcaComp += Math.floor(Math.random() * 10) + 1;
+    }
+    console.log("Vilões finais: " + vilaoComp);
 
-    for (let rodada = 1; rodada <= 3; rodada++) {
-        console.log("Rodada: " + rodada);
-        let jogador = prompt("Nivel " + rodada, "escolha vidro(1,2 ou 3?)");
-        let pisoF = Math.floor(Math.random() * 3) + 1;
-
-        if (jogador == pisoF) {
-            alert("Vidro quebrou! Fim de jogo.");
-            rodada = 10000;
-            ganhou = 1;
-        } else {
-            alert("Congrats! Você passou para o próximo nível! " + pisoF);
+    // comparar os dois times
+    if (forcaPers > forcaComp) {
+        alert("Você ganhou a luta! Sua força foi: " + forcaPers)
+    }
+    else {
+        if (forcaPers < forcaComp) {
+            alert("Voce perdeu! Vilão ganhou a luta com a força = " + forcaComp)
+        }
+        else {
+            alert("Os dois times tem a mesma força. Empate!")
         }
     }
-    if (ganhou == 0) {
-        alert("Arrasou divx!")
-    }
-
 
 });
